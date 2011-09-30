@@ -2,7 +2,6 @@
   (let (csv-line)
     (if append-stop
 	(setf input (concatenate 'string (replace-all input "!" "") "!")))
-    (setf input (reverse input))
     (with-open-file (stream file-path :direction :output :if-exists :supersede :if-does-not-exist :create)
       (loop for n from 0 to 6 do
 	   (dolist (sub (get-codon-results input))
@@ -16,7 +15,7 @@
     (loop for i from '0 to (- (length input) 1) do
 	 (setf lookup-result (dna-codon-lookup (char input i)))
 	 (if lookup-result (push lookup-result results)))
-    (reverse results)))
+    results))
 
 (defun dna-codon-lookup (x)
   (case x

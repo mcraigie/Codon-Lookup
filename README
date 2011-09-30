@@ -1,0 +1,11 @@
+Usage:
+  (output-codons-to-csv <input> <file-path> <append-stop>)
+
+  <input> is the string of amino acids to be processed. E.g. "MDLKKHIMCPRT"
+          Any characters in the string that do not represent an amino acid will be ignored
+  <file-path> is the location and name of the .csv to be created
+  <append-stop> when not-nil will add a column of stop codons to the end of the resulting table
+
+Licensing:
+  The last two functions in the file do not belong to me, I have attached identifying information/their licenses.
+  Any of my code can be used without restriction.
